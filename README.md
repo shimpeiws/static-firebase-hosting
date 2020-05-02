@@ -1,0 +1,1 @@
+# static-firebase-hosting
