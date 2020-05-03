@@ -1,8 +1,8 @@
-name: Dev Deploy
+name: Prod Deploy
 
 on:
   tags:
-    - dev.*
+    - prod.*
 
 jobs:
   build-deploy:
@@ -20,4 +20,4 @@ jobs:
           npm run build:dev
       - name: deploy
         run: |
-          npx firebase deploy --only hosting:dev-static --token ${{ secrets.FIREBASE_TOKEN }}
+          npx firebase deploy --only hosting:static --token ${{ secrets.FIREBASE_TOKEN }}
