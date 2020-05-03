@@ -1,0 +1,23 @@
+name: Prod Deploy
+
+on:
+  tags:
+    - prod.*
+
+jobs:
+  build-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v1
+      - name: Use Node.js 12.x
+        uses: actions/setup-node@master
+        with:
+          node-version: 12.x
+      - name: npm install and build
+        run: |
+          npm install
+          npm run build:dev
+      - name: deploy
+        run: |
+          npx firebase deploy --only hosting:static --token ${{ secrets.FIREBASE_TOKEN }}

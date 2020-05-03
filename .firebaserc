@@ -1,5 +1,20 @@
 {
   "projects": {
     "default": "static-firebase-hosting"
+  },
+  "targets": {
+    "static-firebase-hosting": {
+      "hosting": {
+        "static": [
+          "static-firebase-hosting"
+        ],
+        "dev-static": [
+          "dev-static-firebase-hosting"
+        ],
+        "stg-static": [
+          "stg-static-firebase-hosting"
+        ]
+      }
+    }
   }
 }
