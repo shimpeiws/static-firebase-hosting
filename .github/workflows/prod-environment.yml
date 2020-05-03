@@ -1,8 +1,9 @@
 name: Prod Deploy
 
 on:
-  tags:
-    - prod.*
+  push:
+    tags:
+      - prod.*
 
 jobs:
   build-deploy:
