@@ -5,7 +5,7 @@ import * as fs from "fs";
 exports.filter = functions.https.onRequest((req, res) => {
   const clientIp = requestIp.getClientIp(req);
 
-  const isAllowed = basicAuth((user, password) => {
+  const isAllowed = basicAuth((user: any, password: any) => {
     return user === "user" && password === "password";
   });
   const statusCode = isAllowed ? 200 : 400;
