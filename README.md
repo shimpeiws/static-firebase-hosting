@@ -18,3 +18,15 @@ Waiting for authentication...
 
 Example: firebase deploy --token "$FIREBASE_TOKEN"
 ```
+
+## Deploy dev
+
+`git tag dev.YOUR-KEY && git push origin dev.YOUR-KEY`
+
+## Deploy staging
+
+Merge PR to master
+
+## Deploy prod
+
+`git tag prod.YOUR-KEY && git push origin prod.YOUR-KEY`
